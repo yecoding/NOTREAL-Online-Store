@@ -1,0 +1,72 @@
+#columns{
+	width: 80%;
+	margin: 50px auto;
+	background-color: #eeeeee;
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count:1;	
+
+	column-width: 330px;
+
+	font-size: 0;
+}
+
+div#columns li{
+	display: inline-block;
+	margin: 0;
+	list-style: none;
+	transition: opacity .5s ease-in-out;
+	position: relative;
+}
+
+.imagecap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	outline: 1px solid #ffffff;
+	outline-offset: -10px;
+	z-index: 5;
+	background-color: transparent;
+}
+
+.imagecap button{
+	display: none;
+	width: 30%;
+	margin: 0 auto;
+	padding: 0.5em 1em;
+	margin-top: 80%;
+	background-color: #000000;
+	color: #dddddd;
+	border:none;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
+.imagecap:hover button{
+	display: block;
+}
+
+div#columns li img{
+	width: 100%;
+	height: auto;
+}
+
+div#columns:hover li:not(:hover){
+	opacity: 0.4;
+}
+
+div.showdetails{
+	display: none;
+}
+
+@media screen and (min-width: 800px) {
+	#columns{
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count:3;
+	}
+}
+
