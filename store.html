@@ -26,26 +26,29 @@
 		</nav>
 	</header>
 
-	<div id="storedscrpt">
+<!-- 	<div id="storedscrpt">
 		<h2>Welcome to my <span>DEMO</span> craft store!</h2>
 		<p>All these items are my original designs and handmade with oven-bake clay. </p>
-	</div>
+	</div> -->
 
 	<div id="columns" ng-app="chartApp" ng-controller="chartController">
 		
 		<ul class="itemlist">
 			<li ng-repeat='x in items'>
-				<div class="imagecap" ><button class="seeDetails">See Details</button></div>
+				<div class="imagecap" ><button class="seeDetails" ng-click="x.active=!x.active" ng-show='!x.active'>See Details</button></div>
 				<img src="{{x.image}}">
 
 				<!-- Show item details -->
-				<div class="showdetails">
-					<img src="{{x.image}}">
+				<div class="showdetails" ng-show="x.active">
+					
 					<div class="detaildscrpt">
-						<h4>{{x.name}}</h4>
+						<img src="{{x.image}}">
+						<h4>{{x.title}}</h4>
 						<p>{{x.description}}</p>
 						<p>Price: <span>{{x.price | currency}}</span></p>
 						<button ng-click='calculation(x)' class="addtochart">Add to Chart</button>
+						<button ng-click='x.active=!x.active' class="closeBtn">Back to Store</button>
+						<button ng-click='x.active=!x.active' class="chartBtn">Go to MyChart</button>
 					</div>				
 				</div>
 
@@ -54,10 +57,12 @@
 
 		<div class="mychart">
 			<div id="itemNum">{{count}}</div>
-		</div>
-		
+		</div>		
 	</div>
 
+	<footer>
+		Copyright © 2017 Ye Wang. All Rights Reserved.
+	</footer>
 
 	<script type="text/javascript" src="js/chart.js"></script>
 

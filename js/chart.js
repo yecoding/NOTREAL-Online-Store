@@ -2,45 +2,51 @@ var chart = angular.module('chartApp', []);
 chart.controller('chartController', function($scope){
 	$scope.items = [
 		{
-			name: 'Two Cats Plate',
+			title: 'Two Cats Plate',
 			image: 'graphics/items/twocatsplate.jpg',
 			description:'A 100mm x 100mm mini plate with two cuties saying hi to you. The box-shape plate is perfect for small jwellery storage',
 			price: 60,
+			active:false,
 			select: false
 		},
 		{
-			name: 'Mom Cat Plate',
+			title: 'Mom Cat Plate',
 			image: 'graphics/items/momcatplate.jpg',
 			description:'A mom cat is with her kid cat standing on the plate.',
 			price: 50,
+			active:false,
 			select: false
 		},
 		{
-			name: 'Elephants Plate',
+			title: 'Elephants Plate',
 			image: 'graphics/items/elephantplate.jpg',
 			description:'Many cultures revere elephants as a symbol of honor and good luck.',
 			price: 50,
+			active:false,
 			select: false
 		},
 		{
-			name: 'Panda Brooch',
+			title: 'Panda Brooch',
 			image: 'graphics/items/pandabrooch.jpg',
 			description:'Pink might be the best color for sunglasses of a panda.',
 			price: 25,
+			active:false,
 			select: false
 		},
 		{
-			name: 'Plants Girl Shadowbox',
+			title: 'Plants Girl Shadowbox',
 			image: 'graphics/items/plantsgirlshadowbox.jpg',
 			description:'This is a customized shadowbox for my dear friend Agnes who is a big fan of succulents and cats.',
 			price: 116,
+			active:false,
 			select: false
 		},
 		{
-			name: 'Lotus Incense Holder',
+			title: 'Lotus Incense Holder',
 			image: 'graphics/items/lotusincenseholder.jpg',
 			description:'A lotus incense holder, all handpainted.',
 			price: 80,
+			active:false,
 			select: false
 		},
 		]
@@ -60,6 +66,9 @@ chart.controller('chartController', function($scope){
 			return $scope.total;
 		}
 
+		$scope.showDetails = function(e){
+			var x= document.getElementById('')
+		}
 	
 
 
