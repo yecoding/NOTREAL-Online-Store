@@ -101,6 +101,10 @@ header .main-nav a{
 	border-right: 1px solid #AFB42B;
 }
 
+header .main-nav li:first-of-type a{
+	border-left: 1px solid #AFB42B;
+}
+
 .active{
 	background-color: #AFB42B;
 }

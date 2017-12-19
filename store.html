@@ -21,7 +21,7 @@
 			<ul>
 				<li><a href="index.html">HOME</a></li>
 				<li><a href="#" class="active">STORE</a></li>
-				<li><a href="#">CONTACT</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -30,9 +30,8 @@
 		<h2>Welcome to my <span>DEMO</span> craft store!</h2>
 		<p>All these items are my original designs and handmade with oven-bake clay. </p>
 	</div> -->
-
-	<div id="columns" ng-app="chartApp" ng-controller="chartController">
-		
+<div ng-app="chartApp" ng-controller="chartController">
+	<div id="columns">	
 		<ul class="itemlist">
 			<li ng-repeat='x in items'>
 				<div class="imagecap" ><button class="seeDetails" ng-click="x.active=!x.active" ng-show='!x.active'>See Details</button></div>
@@ -46,19 +45,28 @@
 						<h4>{{x.title}}</h4>
 						<p>{{x.description}}</p>
 						<p>Price: <span>{{x.price | currency}}</span></p>
-						<button ng-click='calculation(x)' class="addtochart">Add to Chart</button>
+						<button ng-click='calculation(x)' class="addtochart">{{x.status}}</button>
 						<button ng-click='x.active=!x.active' class="closeBtn">Back to Store</button>
 						<button ng-click='x.active=!x.active' class="chartBtn">Go to MyChart</button>
 					</div>				
 				</div>
 
 			</li>
-		</ul>
-
-		<div class="mychart">
-			<div id="itemNum">{{count}}</div>
-		</div>		
+		</ul>	
 	</div>
+
+	<div class="mychart">
+		<div id="itemNum">{{count}}</div>
+		<div id="chartForm">
+			<ul>
+				<li ng-repeat='x in items | filter:{select:true}'>
+					<p>{{x.title}}<span>{{x.price | currency}}</span><span ng-click='removeItem(x)'>&times;</span></p>
+				</li>
+			</ul>
+		</div>
+		<div>{{total | currency}}</div>
+	</div>	
+</div>
 
 	<footer>
 		Copyright © 2017 Ye Wang. All Rights Reserved.
