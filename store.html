@@ -3,7 +3,9 @@
 <head>
 	<title>NOTREAL Online Store</title>
 	<meta charset="utf-8">
+	<meta name="keywords" content="AngularJS store, angularjs online store">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
@@ -26,15 +28,12 @@
 		</nav>
 	</header>
 
-<!-- 	<div id="storedscrpt">
-		<h2>Welcome to my <span>DEMO</span> craft store!</h2>
-		<p>All these items are my original designs and handmade with oven-bake clay. </p>
-	</div> -->
+
 <div ng-app="chartApp" ng-controller="chartController">
 	<div id="columns">	
 		<ul class="itemlist">
 			<li ng-repeat='x in items'>
-				<div class="imagecap" ><button class="seeDetails" ng-click="x.active=!x.active" ng-show='!x.active'>See Details</button></div>
+				<div class="imagecap" ng-click="x.active=!x.active" ng-show='!x.active'></div>
 				<img src="{{x.image}}">
 
 				<!-- Show item details -->
@@ -47,7 +46,7 @@
 						<p>Price: <span>{{x.price | currency}}</span></p>
 						<button ng-click='calculation(x)' class="addtochart">{{x.status}}</button>
 						<button ng-click='x.active=!x.active' class="closeBtn">Back to Store</button>
-						<button ng-click='x.active=!x.active' class="chartBtn">Go to MyChart</button>
+						<p>Your have <span>{{count}}</span> items in your Chart. <span>{{total | currency}}</span> in total.</p>
 					</div>				
 				</div>
 
@@ -56,15 +55,20 @@
 	</div>
 
 	<div class="mychart">
-		<div id="itemNum">{{count}}</div>
-		<div id="chartForm">
+		<div id="chartTooltip" ng-show='tooltip' ng-click='tooltip=false'>
+			<p id="orgnmsg">Click HERE to view and edit your items!</p>
+			<p id="clsmsg">Got it!</p>
+		</div>
+		
+		<div id="itemNum" ng-click='showlist = !showlist'>{{count}} items</div>
+		<div id="chartForm" ng-show='showlist'>
 			<ul>
 				<li ng-repeat='x in items | filter:{select:true}'>
-					<p>{{x.title}}<span>{{x.price | currency}}</span><span ng-click='removeItem(x)'>&times;</span></p>
+					<p>{{x.title}} <span>{{x.price | currency}}</span><span class="close" ng-click='removeItem(x)'>&times;</span></p>
 				</li>
 			</ul>
+			<div class="totalNum">Total: {{total | currency}}<button ng-click='checkout()'>Checkout!</button></div>
 		</div>
-		<div>{{total | currency}}</div>
 	</div>	
 </div>
 

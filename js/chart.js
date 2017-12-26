@@ -53,6 +53,8 @@ chart.controller('chartController', function($scope){
 
 		$scope.total = 0;
 		$scope.count = 0;
+		$scope.showlist = false;
+		$scope.tooltip = true;
 
 		$scope.calculation = function(e){
 			e.select = !e.select;
@@ -72,6 +74,14 @@ chart.controller('chartController', function($scope){
 			$scope.count = $scope.count - 1;
 			$scope.total = $scope.total - e.price;
 			e.status = 'Add to Chart';
+		}
+
+		// $scope.outsideClose = function(e){
+		// 	if(e.active){}
+		// }
+
+		$scope.checkout = function(){
+			alert("Thank you for visiting! This is a demo website for coding practice only. The total price of your selected items is $" + $scope.total)
 		}
 
 
