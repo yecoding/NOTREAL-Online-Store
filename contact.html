@@ -9,26 +9,36 @@
 	<link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="landingpage.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/landingpage.js"></script>
+	<script src="js/landingpage.js"></script>
 
 
 </head>
 <body>
 	<header>
-		<h1>Ye's <span>NOTREAL</span> Online Store</h1>
-		<p>Please don't buy anything here, they are not really for sale.</p>
-
+		<div class="logobar">
+			<a href="index.html" class="sitelogo"><img id="logo" src="graphics/ylogo.svg" alt="Ye's"></a>
+			<h1>Ye's <span>NOTREAL</span> Online Store</h1>
+			<p>Please don't buy anything here, they are not really for sale :)</p>
+			<button id="baricon">&#9776;</button>
+		</div>
 		<nav class="main-nav">
 			<ul>
 				<li><a href="index.html">HOME</a></li>
 				<li><a href="store.html">STORE</a></li>
-				<li><a href="#"  class="active">CONTACT</a></li>
+				<li><a href="#" class="active">CONTACT</a></li>
 			</ul>
 		</nav>
 	</header>
 
+	<div class="fullheight">
+		<div class="card">
+			<p class="cardtitle">Get Connected!</p>
+			<p class="cardcontent"><i class="fa fa-envelope" aria-hidden="true"></i> yewang.design@yahoo.com</p>
+			<p class="cardcontent"><i class="fa fa-map-marker" aria-hidden="true"></i> Toronto, Ontario, Canada</p>			
+		</div>
 
-
+	</div>
+	<div id="goodbyecat"></div>
 	<footer>
 		Copyright © 2017 Ye Wang. All Rights Reserved.
 	</footer>

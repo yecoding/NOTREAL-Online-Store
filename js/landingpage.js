@@ -7,4 +7,10 @@ $(document).ready(function(){
 	function(){
 		$("#popbubble").hide();
 	});
+
+	// Toggle navbar on small screens
+	$('#baricon').click(function(){
+		$('nav.main-nav').toggle();
+	});
 });
+

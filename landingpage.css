@@ -1,7 +1,3 @@
-/*font-family: 'Montserrat';*/
-/*font-family: 'Hind';*/
-
-/*Safari and Chrome*/
 @-webkit-keyframes rotating {
     from{
         -webkit-transform: rotate(0deg);
@@ -45,18 +41,25 @@ body{
 	position: relative;
 }
 
-/*Header Style*/
 
-header{
+header div.logobar{
+	box-sizing: border-box;
 	background-color: #CDDC39;
 	color: #ffffff;
-	padding: 7em 0 0 0;
+	overflow: hidden;
+	min-height: 70px;
+	position: relative;
 }
 
 header h1{
+	display: none;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.2em;
 	text-align: center;
 	font-family: 'Cardo';
 	font-size: 200%;
+	line-height: 200%;
 }
 
 header span{
@@ -66,46 +69,82 @@ header span{
 }
 
 header p{
-	margin-top: 1em;
-	margin-bottom: 5em;
+	display: none;
+	margin-bottom: 2em;
 	text-align: center;
-	font-size: 110%;
+	font-size: 100%;
 	font-family: 'Hind';
+}
+
+button#baricon{
+	display: inline-block;
+	height: 50px;
+	background-color: transparent;
+	border:none;
+	color: #ffffff;
+	font-size: 150%;
+	line-height: 50px;
+	margin-right: 10%;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -25px;
+}
+
+header img#logo{
+	display: block;
+	margin-left: 10%;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	
 }
 
 /*Main Navigation Bar*/
 
-header .main-nav ul{
-	width: 80%;
-/*	max-width: 1200px;*/
-	margin: 0 auto;
+header nav.main-nav{
+	display: none;
+	box-sizing: border-box;
+	width: 100%;
 	overflow: hidden;
+}
+
+header .main-nav ul{
+	display: block;
+	width: 100%;
+	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
 header .main-nav ul li{
-	display: inline-block;
-	text-decoration: none;
-	float: left;
+	list-style: none;
 }
 
 header .main-nav a{
-	display: block;
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
+	width: 33.33%;
 	padding: 0.2em 0.8em;
 	text-decoration: none;
-	color: #F0F4C3;
+	background-color: #AFB42B;
+	color: #ffffff; /*#F0F4C3*/
 	font-family: 'Hind';
 	font-size: 100%;
 	text-align: center;
-	line-height: 120%;
-	border-right: 1px solid #AFB42B;
+	border-top: 1px solid #ffffff;
+	border-right: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
 }
 
-header .main-nav li:first-of-type a{
-	border-left: 1px solid #AFB42B;
+header .main-nav li:last-of-type a{
+	border-right: none;
 }
 
-.active{
+a.active{
 	background-color: #AFB42B;
 }
 
@@ -117,8 +156,8 @@ header .main-nav a:hover{
 
 div.content-full{
 	width: 80%;
-	max-width: 1200px;
-	margin: 7em auto 0;
+	max-width: 1000px;
+	margin: 3em auto;
 }
 
 .content-full p{
@@ -127,11 +166,19 @@ div.content-full{
 }
 
 .content-full .hi{
-	font-size: 240%;
+	font-size: 200%;
+	margin-bottom: 0.5em;
 }
 
 .content-full .greeting{
 	font-size: 100%;
+}
+
+.content-full .greeting span{
+	color: #AFB42B;
+	font-weight: bold;
+	border: 1px solid #AFB42B;
+	padding: 0 8px;
 }
 
 .content-full i{
@@ -147,18 +194,18 @@ div.content-full{
 	content: "";
 	display: block;
 	width: 100%;
-	height: 300px;
+	height: 200px;
 }
 
 
 #welcomeCat{
 	display: block;
 	width: 100%;
-	height: 300px;
+	height: 200px;
 	position: fixed;
-	bottom: -300px;
+	bottom: -200px;
 	background: url('graphics/cat_origin.svg') no-repeat;
-	background-size: 300px 300px;
+	background-size: 200px 200px;
 	background-position: center;
 	cursor: pointer;
 }
@@ -168,7 +215,7 @@ div.content-full{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: fixed;
-	bottom: 300px;
+	bottom: 200px;
 	left: 50%;
 	margin-left:-75px;
 	background-color: #111111;
@@ -184,7 +231,7 @@ div.content-full{
 #popbubble::after{
 	content: "";
 	position: fixed;
-	bottom: 280px;
+	bottom: 180px;
 	left: 50%;
 	margin-left: -10px;
 	border-width: 10px;
@@ -195,7 +242,7 @@ div.content-full{
 
 #welcomeCat:hover{
 	background: url('graphics/cat_smiling.svg') no-repeat;
-	background-size: 300px 300px;
+	background-size: 200px 200px;
 	background-position: center;
 }
 
@@ -231,5 +278,106 @@ footer{
 	bottom: 0;
 	z-index: 15;
 }
+
+@media screen and (min-width: 800px){
+	header nav.main-nav, header p, header h1{
+		display: block;
+	}
+
+	header h1{
+		margin-top: 2em;
+	}
+
+	a.sitelogo, button#baricon{
+		display: none;
+	}
+
+	header .main-nav{
+		display: block;
+		width: 100%;	
+		padding: 0;
+		background-color: #CDDC39;
+		overflow: hidden;
+	}
+
+	header .main-nav ul{
+		display: block;
+		width: 33.33%;
+		margin: 0 auto;
+	}
+
+	header .main-nav a{
+		border-top:none;
+		border-bottom: none;
+		background-color: transparent;
+	}
+
+	header .main-nav a.active{
+		background-color: #ffffff;
+		color: #CDDC39;
+	}
+
+	header .main-nav a:hover{
+		background-color: #AFB42B;
+	}
+
+}
+
+/*Contact Page*/
+
+div.fullheight{
+	box-sizing: border-box;
+	width: 100%;
+/*	height: 100vh;
+	background-color: #f0f4c3;*/
+	padding-top: 3em;
+}
+
+div.fullheight div.card{
+	box-sizing: border-box;
+	display: block;
+	width: 80%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 2em;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-family: 'Hind';
+}
+
+div.card p.cardtitle{
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+	font-size: 150%;
+	color: #CDDC39;
+}
+
+div.card p.cardcontent{
+	font-size: 80%;
+}
+
+div.card p.cardcontent i{
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+	font-size: 120%;
+	margin-right: 1em;
+}
+
+div#goodbyecat{
+	display: block;
+	width: 100%;
+	height: 200px;
+	position: fixed;
+	bottom: 36px;
+	background: url('graphics/cat_smiling.svg') no-repeat;
+	background-size: 200px 200px;
+	background-position: center;
+}
+
+
+
+
 
 

@@ -76,13 +76,10 @@ chart.controller('chartController', function($scope){
 			e.status = 'Add to Chart';
 		}
 
-		// $scope.outsideClose = function(e){
-		// 	if(e.active){}
-		// }
-
 		$scope.checkout = function(){
 			alert("Thank you for visiting! This is a demo website for coding practice only. The total price of your selected items is $" + $scope.total)
 		}
+
 
 
 });
