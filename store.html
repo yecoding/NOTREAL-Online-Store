@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<meta name="keywords" content="AngularJS store, angularjs online store">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
@@ -13,7 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="landingpage.css">
 	<link rel="stylesheet" type="text/css" href="column.css">
-	<script src="js/landingpage.js"></script>
+
 </head>
 <body>
 	<header>
@@ -21,9 +20,9 @@
 			<a href="index.html" class="sitelogo"><img id="logo" src="graphics/ylogo.svg" alt="Ye's"></a>
 			<h1>Ye's <span>NOTREAL</span> Online Store</h1>
 			<p>Please don't buy anything here, they are not really for sale :)</p>
-			<button id="baricon">&#9776;</button>
+			<button id="baricon" onclick='togglemenu()'>&#9776;</button>
 		</div>
-		<nav class="main-nav">
+		<nav id="main-nav">
 			<ul>
 				<li><a href="index.html">HOME</a></li>
 				<li><a href="#" class="active">STORE</a></li>
@@ -33,7 +32,7 @@
 	</header>
 
 
-<div ng-app="chartApp" ng-controller="chartController">
+<div ng-app="chartApp" ng-controller="chartController" id="store">
 	<div id="columns">	
 		<ul class="itemlist">
 			<li ng-repeat='x in items'>
@@ -71,15 +70,16 @@
 					<p>{{x.title}} <span>{{x.price | currency}}</span><span class="close" ng-click='removeItem(x)'>&times;</span></p>
 				</li>
 			</ul>
-			<div class="totalNum">Total: {{total | currency}}<button ng-click='checkout()'>Checkout!</button></div>
+			<div class="totalNum">Total: {{total | currency}}<button ng-click='checkoutwindowshow="true"'>Checkout!</button></div>
 		</div>
 	</div>
 
 		<!-- Checkout Popup -->
-<!-- 	<div id="popup">
-		<p>Thank you for visiting! This is a demo website for coding practice only. The total price of your selected items is <span>{{total | currency}}</span>.</p>
-		<span>Close &times;</span>
-	</div>	 -->
+	<div id="popup" ng-show='checkoutwindowshow'>
+		<p>Thank you for visiting!</p> 
+		<p>This is a demo website for coding practice only. The total price of your <span>{{count}}</span> selected items is <span>{{total | currency}}</span>.</p>
+		<span class="closespan" ng-click='checkoutwindowshow=!checkoutwindowshow'>CLOSE &times;</span>
+	</div>	
 
 </div>
 

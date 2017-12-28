@@ -1,3 +1,5 @@
+var menushow = false;
+
 var chart = angular.module('chartApp', []);
 chart.controller('chartController', function($scope){
 	$scope.items = [
@@ -55,6 +57,7 @@ chart.controller('chartController', function($scope){
 		$scope.count = 0;
 		$scope.showlist = false;
 		$scope.tooltip = true;
+		$scope.checkoutwindow = false;
 
 		$scope.calculation = function(e){
 			e.select = !e.select;
@@ -76,10 +79,14 @@ chart.controller('chartController', function($scope){
 			e.status = 'Add to Chart';
 		}
 
-		$scope.checkout = function(){
-			alert("Thank you for visiting! This is a demo website for coding practice only. The total price of your selected items is $" + $scope.total)
-		}
-
-
-
 });
+
+function togglemenu(){
+	var menu = document.getElementById('main-nav');
+	if(!menushow){
+		menu.style.display = 'block';
+	}else{
+		menu.style.display = 'none';
+	}
+	menushow = !menushow;
+}

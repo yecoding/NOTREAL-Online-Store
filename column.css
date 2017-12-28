@@ -280,14 +280,49 @@ div.showdetails .detaildscrpt button.chartBtn:hover{
 	opacity: 1;
 }
 
-/*div#popup{
+div#popup{
+	box-sizing: border-box;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
 	z-index: 99;
-	display: block;
-	width: 80vw;
-	max-width: 800px;
-	background-color: #ffffff;
+	width: 400px;
+	height: 300px;
+	background-color: #F0F4C3;
+	border-radius: 20px;
+	padding: 50px 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	
-}*/
+}
+
+div#popup p, div#popup span{
+	font-family: "Hind";
+	font-size: 100%;
+}
+
+div#popup p{
+	padding-bottom: 1em;
+}
+
+div#popup p:first-child{
+	font-size: 150%;
+	color:#ffffff;
+	text-shadow: 1px 1px 2px #CDDC39;
+}
+
+div#popup span.closespan{
+	display: block;
+	width: 340px;
+	text-align: center;
+	margin-top: 50px;
+	position: fixed;
+	top: 50%;
+	margin-top: 100px;
+	color: #AFB42B;
+	cursor: pointer;
+}
 
 @media screen and (min-width: 800px) {
 	#columns{
@@ -310,10 +345,6 @@ div.showdetails .detaildscrpt button.chartBtn:hover{
 	div#columns:hover li:not(:hover){
 	opacity: 0.4;
 	}
-
-/*	div.showdetails .detaildscrpt button.closeBtn{
-		display: none;
-	}*/
 
 }
 
