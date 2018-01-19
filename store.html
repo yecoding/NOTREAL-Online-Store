@@ -17,7 +17,7 @@
 <body>
 	<header>
 		<div class="logobar">
-			<a href="index.html" class="sitelogo"><img id="logo" src="graphics/ylogo.svg" alt="Ye's"></a>
+			<a href="index.html" class="sitelogo"><img id="logo" src="graphics/ywlogo.png" alt="Ye's"></a>
 			<h1>Ye's <span>NOTREAL</span> Online Store</h1>
 			<p>Please don't buy anything here, they are not really for sale :)</p>
 			<button id="baricon" onclick='togglemenu()'>&#9776;</button>
@@ -50,6 +50,7 @@
 						<button ng-click='calculation(x)' class="addtochart">{{x.status}}</button>
 						<button ng-click='x.active=!x.active' class="closeBtn">Back to Store</button>
 						<p>Your have <span>{{count}}</span> items in your Chart. <span>{{total | currency}}</span> in total.</p>
+						<span class="closeSpan" ng-click='x.active=!x.active'>&times;</span>
 					</div>				
 				</div>
 

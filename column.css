@@ -1,5 +1,4 @@
 
-
 #columns{
 	width: 100%;
 	margin: 0 auto;
@@ -66,6 +65,7 @@ div.showdetails .detaildscrpt{
 	margin: 2em auto;
 	padding: 1em;
 	vertical-align: middle;
+	position: relative;
 }
 
 div.showdetails img{
@@ -125,6 +125,22 @@ div.showdetails .detaildscrpt button.closeBtn:hover{
 
 div.showdetails .detaildscrpt button.chartBtn:hover{
 	background-color: #795548;
+}
+
+div.showdetails .detaildscrpt span.closeSpan{
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 150%;
+	line-height: 1.5em;
+	text-align: center;
+	background-color: #BDBDBD;
+	color: #ffffff;
+	cursor: pointer;
+
 }
 
 /*My Chart*/
